@@ -9,8 +9,9 @@ class MockPump(Pump):
 
     def activate(self):
         if self._activated:
-            pass
+            print('activated')
         self._activated = True
 
     def deactivate(self):
+        print('deactivated')
         self._activated = False

@@ -12,4 +12,4 @@ class Tank:
 
     @property
     def isempty(self):
-        return self._lowerSensor.triggered()
+        return not self._lowerSensor.triggered()

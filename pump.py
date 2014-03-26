@@ -10,7 +10,7 @@ class Pump(object):
         pass
 
     def empty(self, tank):
-        while not tank.isempty():
+        while not tank.isempty:
             self.activate()
         self.deactivate()
 

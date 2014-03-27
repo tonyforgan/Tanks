@@ -8,14 +8,16 @@ import threading
 class Sensor(object):
     __metaclass__ = ABCMeta
 
+    onstatechanged = Event()
+
     def __init__(self):
-        self.onstatechanged = Event()
+        pass
 
     @abstractmethod
     def _monitor(self):
         pass
 
     def activate(self):
-        _thread = threading.Thread(target=self._monitor, args=self)
+        _thread = threading.Thread(target=self._monitor)
         _thread.daemon = True
         _thread.start()
